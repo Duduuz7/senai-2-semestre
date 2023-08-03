@@ -35,9 +35,9 @@ CREATE TABLE Albuns
 	IdAlbum INT PRIMARY KEY IDENTITY,
 	IdArtista INT FOREIGN KEY REFERENCES Artistas(IdArtista),
 	Titulo VARCHAR(20) NOT NULL,
-	DataLancamento VARCHAR(20) NOT NULL,
+	DataLancamento DATE NOT NULL,
 	Localizacao VARCHAR(30) NOT NULL,
-	QtdMinutos VARCHAR(20) NOT NULL,
+	QtdMinutos INT NOT NULL,
 	Ativo VARCHAR(10) NOT NULL
 )
 

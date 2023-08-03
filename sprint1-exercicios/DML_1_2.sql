@@ -19,8 +19,8 @@ VALUES('X1'),('500')
 INSERT INTO Veiculo(IdEmpresa,IdMarca,IdModelo,Placa)
 VALUES(1,1,1, 'EFG123'),(2,2,2, 'MKG321')
 
-INSERT INTO Aluguel(IdVeiculo,IdCliente,Protocolo)
-VALUES(1,1,'12345678'),(2,2, '76584932')
+INSERT INTO Aluguel(IdVeiculo,IdCliente,Protocolo,DataRetirada,DataDevolucao)
+VALUES(1,1,'12345678','12/01/2023','12/02/2023'),(2,2,'76584932','04/03/2023','04/04/2023')
 
 
 SELECT * FROM Empresa

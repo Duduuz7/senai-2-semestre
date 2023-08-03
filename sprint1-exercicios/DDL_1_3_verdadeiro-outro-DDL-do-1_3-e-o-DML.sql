@@ -1,10 +1,10 @@
 -- DDL 1_3
 
 --CRIA BANCO
-CREATE DATABASE Exercicio_1_3;
+CREATE DATABASE Exercicio_1_3_Clinica;
 
 --USA BANCO
-USE Exercicio_1_3
+USE Exercicio_1_3_Clinica
 
 --CRIA TABELA
 CREATE TABLE Clinica
