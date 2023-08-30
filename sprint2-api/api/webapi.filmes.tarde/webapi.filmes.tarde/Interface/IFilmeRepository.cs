@@ -23,9 +23,9 @@ namespace webapi.filmes.tarde.Interface
         /// <summary>
         /// Buscar um objeto através do seu id
         /// </summary>
-        /// <param name="Id">id do objeto que será buscado</param>
+        /// <param name="id">id do objeto que será buscado</param>
         /// <returns>Objeto que foi buscado</returns>
-        FilmeDomain BuscarPorId(int Id);
+        FilmeDomain BuscarPorId(int id);
 
         /// <summary>
         /// Atualizar um filme existente passando o id pelo corpo da requisição
@@ -43,7 +43,7 @@ namespace webapi.filmes.tarde.Interface
         /// <summary>
         /// Deletar um filme existente
         /// </summary>
-        /// <param name="Id">Id do objeto a ser deletado</param>
-        void Deletar(int Id);
+        /// <param name="id">Id do objeto a ser deletado</param>
+        void Deletar(int id);
     }
 }

@@ -22,28 +22,159 @@ namespace webapi.filmes.tarde.Repositories
         private string StringConexao = "Data Source = NOTE07-S15; Initial Catalog = Filmes_Tarde; User Id = sa; Pwd = Senai@134";
         public void AtualizarIdCorpo(GeneroDomain genero)
         {
-            throw new NotImplementedException();
+            using (SqlConnection con = new SqlConnection(StringConexao))
+            {
+                string queryUpdateCorpo = "UPDATE Genero SET Nome = @NovoNome WHERE IdGenero = @Id";
+
+                con.Open();
+
+                using (SqlCommand cmd = new SqlCommand(queryUpdateCorpo, con))
+                {
+                    cmd.Parameters.AddWithValue("@NovoNome", genero.Nome);
+                    cmd.Parameters.AddWithValue("@Id", genero.IdGenero);
+                    cmd.ExecuteNonQuery();
+                }
+            }
         }
 
+
+        /// <summary>
+        /// Atualiza um gênero passando o id do gênero que deseja atualizar pela URL
+        /// </summary>
+        /// <param name="id">Id do gênero que deseja atualizar</param>
+        /// <param name="genero">Objeto com gênero que dejeta atualizar</param>
         public void AtualizarIdUrl(int id, GeneroDomain genero)
         {
-            throw new NotImplementedException();
+            using (SqlConnection con = new SqlConnection(StringConexao))
+            {
+                string queryUpdateUrl = "UPDATE Genero SET Nome = @NovoNome WHERE IdGenero = @Id";
+
+                con.Open();
+
+                using (SqlCommand cmd = new SqlCommand(queryUpdateUrl, con))
+                {
+                    cmd.Parameters.AddWithValue("@NovoNome", genero.Nome);
+                    cmd.Parameters.AddWithValue("@Id", id);
+                    cmd.ExecuteNonQuery();
+                }
+            }
         }
 
+
+
+        /// <summary>
+        /// Buscar um gênero pelo seu Id
+        /// </summary>
+        /// <param name="Id">Id do gênero buscado</param>
+        /// <returns>Objeto com o gênero buscado</returns>
+        //public GeneroDomain BuscarPorId(int Id)
+        //{
+        //    List<GeneroDomain> listaGeneros = ListarTodos();
+        //    GeneroDomain generoBuscado = new GeneroDomain()
+        //    {
+        //        IdGenero = Id,
+        //        Nome = "Erro, gênero não encontrado !!!"
+        //    };
+
+        //    foreach (GeneroDomain genero in listaGeneros)
+        //    {
+        //        if (genero.IdGenero == Id) generoBuscado = genero;
+        //    }
+        //    return generoBuscado;
+        //}
+
+        /// <summary>
+        /// Buscar um gênero pelo seu Id
+        /// </summary>
+        /// <param name="Id">Id do gênero buscado</param>
+        /// <returns>Objeto com o gênero buscado</returns>
         public GeneroDomain BuscarPorId(int Id)
         {
-            throw new NotImplementedException();
+            //Declara a SqlConnection passando a string de conexão como parâmetro
+            using (SqlConnection con = new SqlConnection(StringConexao))
+            {
+                //Declara a query que será executada 
+                string queryFindById = $"SELECT IdGenero, Nome FROM Genero WHERE IdGenero = @IdGenero";
+
+                SqlDataReader rdr;
+
+                using (SqlCommand cmd = new SqlCommand(queryFindById, con))
+                {
+                    cmd.Parameters.AddWithValue("@IdGenero", Id);
+
+                    con.Open();
+
+                    rdr = cmd.ExecuteReader();
+
+                    if (rdr.Read())
+                    {
+                        GeneroDomain generoBuscado = new GeneroDomain
+                        {
+                            IdGenero = Convert.ToInt32(rdr["IdGenero"]),
+                            Nome = rdr["Nome"].ToString()
+                        };
+                        return generoBuscado;
+                    }
+                    return null;
+                }
+            }
         }
 
-        public void Cadastrar(GeneroDomain novoGenero)
-        {
-            throw new NotImplementedException();
+            /// <summary>
+            /// Cadastrar um novo gênero
+            /// </summary>
+            /// <param name="novoGenero">Objeto com as informações que serão cadastradas</param>
+            public void Cadastrar(GeneroDomain novoGenero)
+            {
+            //Declara a SqlConnection passando a string de conexão como parâmetro
+                using (SqlConnection con = new SqlConnection(StringConexao))
+                {
+                //Declara a query que será executada 
+                string queryInsert = "INSERT INTO Genero(Nome) VALUES (@Nome)";
+
+                //Declara o SqlCommand passando a query que será executada e a conexão com o banco de dados
+                     using (SqlCommand cmd = new SqlCommand(queryInsert, con))
+                     {
+                        //Passa o valor do parâmetro @Nome
+                        cmd.Parameters.AddWithValue("@Nome", novoGenero.Nome);
+
+                        //Abre a conexão com o banco de dados
+                        con.Open();
+
+                        //Executa a query
+                        cmd.ExecuteNonQuery();
+                     }
+                }
         }
 
+
+        /// <summary>
+        /// Deleta um gênero
+        /// </summary>
+        /// <param name="Id">Id do gênero a ser deletado</param>
         public void Deletar(int Id)
         {
-            throw new NotImplementedException();
+            //Declara a SqlConnection passando a string de conexão como parâmetro
+            using (SqlConnection con = new SqlConnection(StringConexao))
+            {
+                //Declara a query que será executada 
+                string queryDelete = $"DELETE FROM Genero WHERE IdGenero = @IdGenero";
+
+                //Abre a conexão com o banco de dados
+                con.Open();
+
+                using (SqlCommand cmd = new SqlCommand(queryDelete, con))
+                {
+                    cmd.Parameters.AddWithValue("@IdGenero", Id);
+
+                    //Executa a query
+                    cmd.ExecuteNonQuery();
+                }
+            }
         }
+
+
+
 
         /// <summary>
         /// Listar todos os objetos do tipo gênero

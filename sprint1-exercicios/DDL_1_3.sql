@@ -1,30 +1,64 @@
--- DML 1_3 
+-- DDL 1_3
 
-USE Exercicio_1_3;
+--CRIA BANCO
+CREATE DATABASE Exercicio_1_3_Clinica;
 
--- INSERÇÃO
+--USA BANCO
+USE Exercicio_1_3_Clinica
+
+--CRIA TABELA
+CREATE TABLE Clinica
+(
+	IdClinica INT PRIMARY KEY IDENTITY,
+	Endereco VARCHAR(60) NOT NULL
+)
+
+CREATE TABLE TipoPet
+(
+	IdTipoPet INT PRIMARY KEY IDENTITY,
+	Descricao VARCHAR(20) NOT NULL
+)
+
+CREATE TABLE Raca
+(
+	IdRaca INT PRIMARY KEY IDENTITY,
+	Descricao VARCHAR(20) NOT NULL
+)
 
 
-INSERT INTO Clinica(Endereco)
-VALUES('Rua Niterói, 123'),('Rua das Papoulas, 143')
+CREATE TABLE Dono
+(
+	IdDono INT PRIMARY KEY IDENTITY,
+	Nome VARCHAR(20) NOT NULL
+)
 
-INSERT INTO TipoPet(Descricao)
-VALUES('Mamífero'),('Réptil')
+CREATE TABLE Veterinario
+(
+	IdVeterinario INT PRIMARY KEY IDENTITY,
+	IdClinica INT FOREIGN KEY REFERENCES Clinica(IdClinica),
+	Nome VARCHAR(20) NOT NULL,
+	CRMV VARCHAR(15) NOT NULL
+)
 
-INSERT INTO Raca(Descricao)
-VALUES('Bulldog'),('Jabuti')
+CREATE TABLE Pet
+(
+	IdPet INT PRIMARY KEY IDENTITY,
+	IdTipoPet INT FOREIGN KEY REFERENCES TipoPet(IdTipoPet),
+	IdRaca INT FOREIGN KEY REFERENCES Raca(IdRaca),
+	IdDono INT FOREIGN KEY REFERENCES Dono(IdDono),
+	Nome VARCHAR(20) NOT NULL,
+	DataNascimento VARCHAR(10)
+)
 
-INSERT INTO Dono(Nome)
-VALUES('Eduardo'),('Felipe')
+CREATE TABLE Atendimentos
+(
+	IdAtendimento INT PRIMARY KEY IDENTITY,
+	IdVeterinario INT FOREIGN KEY REFERENCES Veterinario(IdVeterinario),
+	IdPet INT FOREIGN KEY REFERENCES Pet(IdPet),
+	Descricao VARCHAR(30) NOT NULL,
+	DataAtendimento VARCHAR(10)
+)
 
-INSERT INTO Veterinario(IdClinica,Nome,CRMV)
-VALUES(1,'Jose','1234'),(2,'Ramon','4321')
-
-INSERT INTO Pet(IdTipoPet,IdRaca,IdDono,Nome,DataNascimento)
-VALUES(1,1,1,'Billy','01/01/2001'),(2,2,2,'Josh','02/02/2002')
-
-INSERT INTO Atendimentos(IdVeterinario,IdPet,Descricao,DataDoAtendimento)
-VALUES(1,1,'ldkj','05/12/2023'),(2,2,'ld','07/12/2023')
 
 SELECT * FROM Clinica
 SELECT * FROM TipoPet
@@ -32,7 +66,4 @@ SELECT * FROM Raca
 SELECT * FROM Dono
 SELECT * FROM Veterinario
 SELECT * FROM Pet
-SELECT * FROM Atendimento
-
-
-
+SELECT * FROM Atendimentos

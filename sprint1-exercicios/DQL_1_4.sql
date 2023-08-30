@@ -1,5 +1,9 @@
 -- DQL 1_4
 
+USE Exercicio_1_4
+
+---------------------------------------------
+
 SELECT 
 	Usuarios.Nome,Usuarios.Email,Usuarios.Permissao AS Administrador
 FROM

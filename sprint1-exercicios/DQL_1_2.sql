@@ -1,5 +1,7 @@
 --DQL 1_2
 
+USE Exercicio_1_2
+
 SELECT 
 	Aluguel.IdAluguel,Aluguel.IdVeiculo,Aluguel.DataRetirada,Aluguel.DataDevolucao,
 	Cliente.Nome AS NomeCliente,Modelo.Nome AS NomeModelo
