@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using webapi.filmes.tarde.Domains;
 using webapi.filmes.tarde.Interface;
@@ -45,6 +46,7 @@ namespace webapi.filmes.tarde.Controller
         /// </summary>
         /// <returns>Uma lista de gêneros e um status code</returns>
         [HttpGet]
+        [Authorize]//Precisa estar logado para acessar a rota
         public IActionResult Get()
         {
 

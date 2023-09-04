@@ -13,14 +13,12 @@ namespace webapi.filmes.tarde.Repositories
         /// </summary>
         /// <param name="email">Email da conta que deseja encontrar</param>
         /// <param name="senha">Senha da conta que deseja encontrar</param>
-        /// <returns></returns>
+        /// <returns>Objeto com Login</returns>
         public UsuarioDomain BuscarLogin(string email, string senha)
         {
-            UsuarioDomain usuario = null;
-
             using (SqlConnection con = new SqlConnection(StringConexao))
             {
-                string querySelect = "SELECT IdUsuario, Permissao, Email, Senha FROM Usuario WHERE Email = @Email AND Senha = @Senha";
+                string querySelect = "SELECT IdUsuario, Permissao, Email FROM Usuario WHERE Email = @Email AND Senha = @Senha";
 
                 using (SqlCommand cmd = new SqlCommand(querySelect, con))
                 {
@@ -33,18 +31,18 @@ namespace webapi.filmes.tarde.Repositories
                     {
                         if (rdr.Read())
                         {
-                            usuario = new UsuarioDomain()
+                            UsuarioDomain usuario = new UsuarioDomain()
                             {
                                 IdUsuario = Convert.ToInt32(rdr["IdUsuario"]),
-                                Email = rdr["Email"].ToString(),
-                                Senha = rdr["Senha"].ToString(),
-                                Permissao = rdr["Permissao"].ToString()
+                                Permissao = rdr["Permissao"].ToString(),
+                                Email = rdr["Email"].ToString()                               
                             };
+                            return usuario;
                         }
+                        return null;
                     }
                 }
             }
-            return usuario;
-        }
+        }        
     }
 }

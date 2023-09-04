@@ -104,7 +104,7 @@
             <param name="id">Id do gênero que deseja atualizar</param>
             <returns>Status Code</returns>
         </member>
-        <member name="M:webapi.filmes.tarde.Controller.UsuarioController.Get(System.String,System.String)">
+        <member name="M:webapi.filmes.tarde.Controller.UsuarioController.Post(webapi.filmes.tarde.Domains.UsuarioDomain)">
             <summary>
             Busca um login pela seu email e senha
             </summary>
@@ -120,6 +120,11 @@
         <member name="T:webapi.filmes.tarde.Domains.GeneroDomain">
             <summary>
             CLasse que representa a entidade(tabela) Genero
+            </summary>
+        </member>
+        <member name="T:webapi.filmes.tarde.Domains.UsuarioDomain">
+            <summary>
+            CLasse que representa a entidade(tabela) Usuário 
             </summary>
         </member>
         <member name="T:webapi.filmes.tarde.Interface.IFilmeRepository">
@@ -316,7 +321,7 @@
             </summary>
             <param name="email">Email da conta que deseja encontrar</param>
             <param name="senha">Senha da conta que deseja encontrar</param>
-            <returns></returns>
+            <returns>Objeto com Login</returns>
         </member>
     </members>
 </doc>
