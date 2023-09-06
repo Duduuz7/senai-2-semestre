@@ -20,6 +20,6 @@ namespace senai.inlock.webApi.Domains
         public DateTime DataLancamento { get; set; }
 
         [Required(ErrorMessage = "O valor é obrigatório !")]
-        public float Valor { get; set; }
+        public decimal Valor { get; set; }
     }
 }

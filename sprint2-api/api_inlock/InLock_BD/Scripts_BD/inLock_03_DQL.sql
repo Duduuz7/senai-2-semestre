@@ -26,5 +26,7 @@ SELECT Estudio.IdEstudio,Estudio.Nome,Jogo.Nome FROM Estudio
 LEFT JOIN Jogo
 ON Estudio.IdEstudio = Jogo.IdEstudio;
 
+/* Inner join listar todos Jogos*/
 
+SELECT Jogo.IdJogo, Jogo.Nome, Jogo.Descricao, Jogo.DataLancamento, Jogo.Valor, Estudio.Nome FROM Jogo INNER JOIN Estudio ON Estudio.IdEstudio = Jogo.IdEstudio;
 

@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>senai.inlock.webApi</name>
+    </assembly>
+    <members>
+        <member name="M:senai.inlock.webApi.Controller.EstudioController.Get">
+            <summary>
+            Lista todos os estúdios
+            </summary>
+            <returns>Status Code e a lista com os estúdios</returns>
+        </member>
+        <member name="M:senai.inlock.webApi.Controller.EstudioController.Delete(System.Int32)">
+            <summary>
+            Deleta um estúdio
+            </summary>
+            <param name="id">id do estúdio que deseja deletar</param>
+            <returns>Status Code</returns>
+        </member>
+        <member name="M:senai.inlock.webApi.Controller.EstudioController.Post(senai.inlock.webApi.Domains.EstudioDomain)">
+            <summary>
+            Cadastra um novo estúdio
+            </summary>
+            <param name="novoEstudio">objeto com novo estúdio cadastrado</param>
+            <returns>Status Code</returns>
+        </member>
+        <member name="M:senai.inlock.webApi.Controller.JogoController.Get">
+            <summary>
+            Lista todos os jogos cadastrados
+            </summary>
+            <returns>Status Code e a lista com os jogos</returns>
+        </member>
+        <member name="M:senai.inlock.webApi.Controller.JogoController.Delete(System.Int32)">
+            <summary>
+            Deleta um jogo
+            </summary>
+            <param name="id">id do jogo que deseja deletar</param>
+            <returns>Status Code</returns>
+        </member>
+        <member name="M:senai.inlock.webApi.Controller.JogoController.Post(senai.inlock.webApi.Domains.JogoDomain)">
+            <summary>
+            Cadastra um novo jogo
+            </summary>
+            <param name="novoJogo">Objeto com novo jgo</param>
+            <returns>Status Code</returns>
+        </member>
+        <member name="M:senai.inlock.webApi.Controller.UsuarioController.Post(senai.inlock.webApi.Domains.UsuarioDomain)">
+            <summary>
+            Busca um login pelo seu email e senha
+            </summary>
+            <param name="usuario">Objeto com o login</param>
+            <returns></returns>
+        </member>
+        <member name="M:senai.inlock.webApi.Interface.IEstudioRepository.Cadastrar(senai.inlock.webApi.Domains.EstudioDomain)">
+            <summary>
+            Cadastra um novo estudio
+            </summary>
+            <param name="novoEstudio">Objeto com novo estudio cadastrado</param>
+        </member>
+        <member name="M:senai.inlock.webApi.Interface.IEstudioRepository.ListarTodos">
+            <summary>
+            Lista todos os estudios cadastrados
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:senai.inlock.webApi.Interface.IEstudioRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta um estudio
+            </summary>
+            <param name="id">Id do estudio que deseja deletar</param>
+        </member>
+        <member name="M:senai.inlock.webApi.Interface.IJogoRepository.Cadastrar(senai.inlock.webApi.Domains.JogoDomain)">
+            <summary>
+            Cadastra um novo jogo
+            </summary>
+            <param name="novoJogo">Objeto com o novo jogo cadastrado</param>
+        </member>
+        <member name="M:senai.inlock.webApi.Interface.IJogoRepository.ListarTodos">
+            <summary>
+            Lista todos os jogos cadastrados
+            </summary>
+            <returns>Lista com todos os jogos cadastrados</returns>
+        </member>
+        <member name="M:senai.inlock.webApi.Interface.IJogoRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta um jogo
+            </summary>
+            <param name="id">Id do jogo que deseja deletar</param>
+        </member>
+    </members>
+</doc>
