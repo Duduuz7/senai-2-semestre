@@ -42,6 +42,25 @@ namespace senai.inlock.webApi.Controller
         }
 
         /// <summary>
+        /// Lista todos os estúdios cadastrados + seus jogos.
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet("ListarComJogos")]
+        public IActionResult GetWithGames() 
+        {
+            try
+            {
+                List<EstudioDomain> listaEstudios = _estudioRepository.ListarComJogos();
+
+                return Ok(listaEstudios);
+            }
+            catch (Exception erro)
+            {
+                return BadRequest(erro.Message);
+            }
+        }
+
+        /// <summary>
         /// Deleta um estúdio
         /// </summary>
         /// <param name="id">id do estúdio que deseja deletar</param>

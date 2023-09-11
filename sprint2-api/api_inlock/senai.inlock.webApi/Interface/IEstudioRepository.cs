@@ -16,6 +16,8 @@ namespace senai.inlock.webApi.Interface
         /// <returns></returns>
         List<EstudioDomain> ListarTodos();
 
+        List<EstudioDomain> ListarComJogos();
+
         /// <summary>
         /// Deleta um estudio
         /// </summary>

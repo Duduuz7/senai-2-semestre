@@ -10,6 +10,12 @@
             </summary>
             <returns>Status Code e a lista com os estúdios</returns>
         </member>
+        <member name="M:senai.inlock.webApi.Controller.EstudioController.GetWithGames">
+            <summary>
+            Lista todos os estúdios cadastrados + seus jogos.
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:senai.inlock.webApi.Controller.EstudioController.Delete(System.Int32)">
             <summary>
             Deleta um estúdio
