@@ -13,7 +13,7 @@ namespace webapi.inlock.codefirst.Domains
 
         [Column(TypeName = "VARCHAR(100)")]
         [Required(ErrorMessage = "Email obrigatório!")]
-        public string Email { get; set; }
+        public string? Email { get; set; }
 
         [Column(TypeName = "VARCHAR(60)")]
         [Required(ErrorMessage = "Senha obrigatória!")]
@@ -25,6 +25,6 @@ namespace webapi.inlock.codefirst.Domains
         public Guid IdTipoUsuario{ get; set; }
 
         [ForeignKey("IdTipoUsuario")]
-        public TiposUsuarioDomain TipoUsuario { get; set; }
+        public TiposUsuarioDomain? TipoUsuario { get; set; }
     }
 }

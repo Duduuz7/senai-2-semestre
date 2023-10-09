@@ -91,7 +91,7 @@ namespace senai.inlock.webApi.Controller
             catch (Exception erro)
             {
                 // Retorna um status code BadRequest (400) e a mensagem de erro
-                return BadRequest(erro.Message);
+          
             }
         }
 

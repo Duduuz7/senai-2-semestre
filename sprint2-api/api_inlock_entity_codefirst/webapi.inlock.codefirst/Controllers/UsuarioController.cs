@@ -34,18 +34,18 @@ namespace webapi.inlock.codefirst.Controllers
         }
 
         //Falta implementar o endpoint
-        [HttpGet]
-        public IActionResult GetByEmailAndPassword() 
-        {
-            try
-            {
-                //_usuarioRepository.BuscarUsuario().
-            }
-            catch (Exception)
-            {
+        //[HttpGet]
+        //public IActionResult GetByEmailAndPassword() 
+        //{
+        //    try
+        //    {
+        //        //_usuarioRepository.BuscarUsuario().
+        //    }
+        //    catch (Exception)
+        //    {
 
-                throw;
-            }
-        }
+        //        throw;
+        //    }
+        //}
     }
 }

@@ -75,3 +75,4 @@ C:\Users\48114302801\Desktop\senai-2-semestre\sprint2-api\api_inlock_entity_code
 C:\Users\48114302801\Desktop\senai-2-semestre\sprint2-api\api_inlock_entity_codefirst\webapi.inlock.codefirst\obj\Debug\net7.0\webapi.inlock.codefirst.genruntimeconfig.cache
 C:\Users\48114302801\Desktop\senai-2-semestre\sprint2-api\api_inlock_entity_codefirst\webapi.inlock.codefirst\obj\Debug\net7.0\ref\webapi.inlock.codefirst.dll
 C:\Users\48114302801\Desktop\senai-2-semestre\sprint2-api\api_inlock_entity_codefirst\webapi.inlock.codefirst\bin\Debug\net7.0\BCrypt.Net-Next.dll
+C:\Users\48114302801\Desktop\senai-2-semestre\sprint2-api\api_inlock_entity_codefirst\webapi.inlock.codefirst\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

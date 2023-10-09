@@ -21,3 +21,5 @@ VALUES (NEWID(),'adm@adm.com','123456','CC240F41-EC33-44D4-A9E9-D32F1F01AB4B'),
 	   (NEWID(),'comum@comum.com','654321','54B43C87-032A-4F90-9BB4-155DEF5E71D7')
 
 SELECT * FROM Usuario
+
+DROP DATABASE inlock_games_codeFirst;
