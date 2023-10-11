@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -9,22 +9,6 @@
 </head>
 
 <body>
-
-
-    <form action="">
-
-        <label for="nome">Nome: </label>
-        <input type="text" id="nome" placeholder="Nome">
-        <br><br>
-
-        <label for="nickname">Nickname: </label>
-        <input type="text" id="nickname" placeholder="Nickname">
-        <br><br>
-
-        <button onclick="saudar()">Saudar</button>
-
-    </form>
-
 
     <script>
         //0123456
@@ -42,17 +26,6 @@
         console.log(nome.substr(1, 5))
 
         console.log(nome.replace("Felipe", "Cavalcante"));
-
-        //FUNCAO SAUDAR
-
-        function saudar(){
-            event.preventDefault(); //para o submit do formulário
-            let nome = document.getElementById("nome").value;
-            let nickname = document.getElementById("nickname").value;
-
-            
-            alert(`Ola ${nome.replace(nome, nickname)} !`);
-        }
     </script>
 
 </body>

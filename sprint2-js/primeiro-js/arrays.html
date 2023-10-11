@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+        //arrays em javascript
+        let frutas = ['Banana', 'Ciriguela', 'Mamão', 'Uva'];
+        console.log(frutas);
+
+        frutas.push('Ameixa'); //para add novas coisas no final da lista do array
+        frutas.push('Amora');
+        frutas.sort() // ordena os elementos do array em ordem alfabética, ou ordem crescente no caso de números
+
+        // for (let index = 0; index < frutas.length; index++) {
+        //     console.log(`Fruta ${index+1}: ${frutas[index]}`)
+        // }
+
+        // primerio parametro é os objetos dentro do array, e o segundo parametro é o index ex: (i + 1)
+        frutas.forEach(function (f, i) {
+            console.log(`Fruta ${i + 1}: ${f}`)
+        });
+
+    </script>
+
+</body>
+
+</html>

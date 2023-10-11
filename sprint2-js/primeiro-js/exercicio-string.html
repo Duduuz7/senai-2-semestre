@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form onsubmit="saudar()">
+
+        <label for="nome">Nome: </label>
+        <input type="text" id="nome" placeholder="Seu nome">
+        <br><br>
+
+        <label for="nickname">Nickname: </label>
+        <input type="text" id="nickname" placeholder="Como gostaria de ser chamado">
+        <br>
+
+        <p id="saudacao"></p>
+
+        <button>Saudar</button>
+
+    </form>
+
+    <script>
+
+        function saudar() {
+            event.preventDefault(); //para o submit do formulário
+            let nome = document.getElementById("nome").value;
+            let nickname = document.getElementById("nickname").value;
+
+            document.getElementById('saudacao').innerText = `Olá ${nome.replace(nome, nickname)} !!!`;
+        }
+
+    </script>
+
+</body>
+
+</html>
+
+<!-- Console.log só para testar -->
