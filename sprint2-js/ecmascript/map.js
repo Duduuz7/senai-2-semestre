@@ -35,7 +35,7 @@
 // comentariosOk.forEach(x => console.log(x.comentario))
 
 
-//-- reduce (retorna apenas um valor, a partir do valor inicial, colocado com parametro e no final da funcao --
+//-- reduce (retorna apenas um valor, a partir do valor inicial, colocado com parametro e no final da funcao) --
 
 
 const numeros = [1, 2, 5, 10, 300];
@@ -47,4 +47,4 @@ const soma = numeros.reduce((valorInicial, numero) => {
 console.log(soma);
 
 
-//------------------------------------
+//-------------------------------------
