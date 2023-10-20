@@ -13,7 +13,8 @@
     <form>
 
         <label for="cep">CEP</label>
-        <input type="number" placeholder="digite o cep" id="cep" onblur="chamarApi()" />
+        <input type="number" placeholder="digite o cep" id="cep" onblur="chamarApi()" autocomplete="off" />
+        <span id="not-found"></span>
         <br /><br />
 
         <label for="endereco">Endereço</label>
@@ -47,10 +48,37 @@
 
                 const promise = await fetch(url)
                 const endereco = await promise.json();
-                console.log(endereco);
-                
+
+                //exibir dos dados no formulário
+                exibirEndereco(endereco)
+
+                document.getElementById('not-found').innerText = ''
+
+                // console.log(endereco);
+
             } catch (error) {
+                //rejeitada
                 console.log("Deu ruim na API");
+
+                //informa o usuário
+                limparEndereco()
+                document.getElementById('not-found').innerText = "CEP inválido !!!"
+
+            }
+
+
+            function exibirEndereco(endereco) {
+                document.getElementById("endereco").value = endereco.logradouro
+                document.getElementById("bairro").value = endereco.bairro
+                document.getElementById("cidade").value = endereco.localidade
+                document.getElementById("estado").value = endereco.uf
+            }
+
+            function limparEndereco() {
+                document.getElementById("endereco").value = ''
+                document.getElementById("bairro").value = ''
+                document.getElementById("cidade").value = ''
+                document.getElementById("estado").value = ''
             }
         }
 
