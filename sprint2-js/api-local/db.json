@@ -1,12 +1,15 @@
 {
-  "imc": [
+  "contatos": [
     {
-      "id": 1,
       "nome": "Eduardo",
-      "altura": "1.78",
-      "peso": 90,
-      "situacao": "Cuidado !!!",
-      "imc": 45.9
+      "telefone": "11964926285",
+      "cep": "03268020",
+      "endereco": "Rua Amatari",
+      "numero": "105",
+      "bairro": "Vila Tolstoi",
+      "cidade": "São Paulo",
+      "estado": "SP",
+      "id": 1
     }
   ]
 }

@@ -10,7 +10,15 @@
 
 <body>
 
-    <form>
+    <form onsubmit="cadastrar(event)">
+
+        <label for="nome">Nome</label>
+        <input type="text" placeholder=" ... " id="nome" />
+        <br /><br />
+
+        <label for="telefone">Telefone</label>
+        <input type="number" placeholder=" ... " id="telefone" />
+        <br /><br />
 
         <label for="cep">CEP</label>
         <input type="number" placeholder="digite o cep" id="cep" onblur="chamarApi()" autocomplete="off" />
@@ -19,6 +27,10 @@
 
         <label for="endereco">Endereço</label>
         <input type="text" placeholder=" ... " id="endereco" />
+        <br /><br />
+
+        <label for="numero">Número</label>
+        <input type="text" placeholder=" ... " id="numero" />
         <br /><br />
 
         <label for="bairro">Bairro</label>
@@ -33,9 +45,47 @@
         <input type="text" placeholder=" ... " id="estado" />
         <br /><br />
 
+        <button>Salvar Contato</button>
+
     </form>
 
     <script>
+
+        const urlLocal = "http://localhost:3000/contatos";
+
+        async function cadastrar(e) {
+            e.preventDefault();
+
+            const nome = document.getElementById('nome').value;
+            const telefone = document.getElementById('telefone').value;
+            const cep = document.getElementById('cep').value;
+            const endereco = document.getElementById('endereco').value;
+            const numero = document.getElementById('numero').value;
+            const bairro = document.getElementById('bairro').value;
+            const cidade = document.getElementById('cidade').value;
+            const estado = document.getElementById('estado').value;
+
+            const objDados = { nome, telefone, cep, endereco, numero, bairro, cidade, estado }
+
+            try {
+
+                const promise = await fetch(urlLocal, {
+                    //transforma um objeto em JSON
+                    body: JSON.stringify(objDados),
+                    headers: { "Content-Type": "application/json" },
+                    method: "post"
+                });
+
+                const retorno = promise.json();//pega o retorno da api
+
+                console.log(retorno);
+
+            } catch (error) {
+                alert("Deu ruim" + error)
+            }
+        }
+
+
 
         async function chamarApi() {
 
@@ -81,7 +131,6 @@
                 document.getElementById("estado").value = ''
             }
         }
-
     </script>
 
 </body>
