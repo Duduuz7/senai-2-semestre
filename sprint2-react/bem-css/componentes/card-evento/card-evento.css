@@ -1,0 +1,67 @@
+/* @fontface */
+
+section {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 250px;
+    width: 250px;
+
+    border: 3px solid #821B47;
+    border-radius: 5px;
+}
+
+.card__titulo {
+    margin-top: 25px;
+    margin-left: 20px;
+
+    font-size: 18px;
+    height: 27px;
+    width: 144px;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+.card__texto {
+    margin-left: 20px;
+
+    font-size: 16px;
+    height: 72px;
+    width: 192px;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+.card__conectar {
+    margin-left: 116px;
+    margin-top: 35px;
+
+    font-size: 16px;
+    font-weight: 600;
+    height: 72px;
+    width: 192px;
+    font-family: Arial, Helvetica, sans-serif;
+
+    cursor: pointer;
+
+    color: #B51D44;
+}
+
+.card__conectar:hover {
+    color: #830a29;
+}
+
+.card__conectar--disabled {
+    color: lightgrey;
+    cursor: not-allowed;
+}
+
+.card__conectar--disabled:hover {
+    color: lightgrey;
+}
