@@ -9,7 +9,7 @@ function App() {
       {/* <h1>Hello React</h1>
       <Titulo texto="Eduardo" /> */}
 
-      <CardEvento
+      {/* <CardEvento
         titulo="Título do evento"
         texto="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta debitis nam, sapiente corporis voluptas omnisr." textoLink="Conectar"
         desabilitado={true}
@@ -23,7 +23,9 @@ function App() {
       <CardEvento
         titulo="SqlServer"
         texto="Primeira aula com Carlos"
-        textoLink="Reservar" />
+        textoLink="Reservar" /> */}
+
+        
 
     </div>
   );

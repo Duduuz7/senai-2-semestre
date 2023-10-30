@@ -1,0 +1,12 @@
+
+button {
+
+    height: 30px;
+    
+    border: 2px solid black;
+    border-radius: 4px;
+
+    background-color: crimson;
+    color: black;
+
+}
